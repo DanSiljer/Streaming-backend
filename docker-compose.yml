@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+ streamingpg:
+    image: postgres
+    ports:
+      - '5432:5432'
+    container_name: 'streamingpg'
+    restart: always
+    volumes:
+      - streamingpg-data:/var/lib/postgresql/data
+    environment :
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD:  string2512
+      POSTGRES_DB:  streamingpg
+
+
+volumes:
+  streaming-data:
